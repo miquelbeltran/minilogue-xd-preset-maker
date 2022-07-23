@@ -8,7 +8,7 @@ Below this line, is the original instructions of usage. They still apply, just u
 
 - mnlgxdlib
 - mnlgxdpreset
-- mnlgxdoprog
+- mnlgxdprog
 
 ---
 
