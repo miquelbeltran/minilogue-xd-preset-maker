@@ -308,10 +308,10 @@ def write_empty_prog_info(zip_file, name)
   zip_file.get_output_stream(name) do |f|
     f.puts '<?xml version="1.0" encoding="UTF-8"?>'
     f.puts
-    f.puts '<minilogue_ProgramInformation>'
+    f.puts '<xd_ProgramInformation>'
     f.puts '  <Programmer></Programmer>'
     f.puts '  <Comment></Comment>'
-    f.puts '</minilogue_ProgramInformation>'
+    f.puts '</xd_ProgramInformation>'
   end
 end
 
@@ -319,7 +319,7 @@ def write_preset_information(zip_file, id, name, n)
   zip_file.get_output_stream('PresetInformation.xml') do |f|
     f.puts '<?xml version="1.0" encoding="UTF-8"?>'
     f.puts
-    f.puts '<minilogue_Preset>'
+    f.puts '<xd_Preset>'
     f.puts "  <DataID>#{id}</DataID>"
     f.puts "  <Name>#{name}</Name>"
     f.puts '  <Author>Various</Author>'
@@ -328,7 +328,7 @@ def write_preset_information(zip_file, id, name, n)
     f.puts "  <Date>#{Time.now.strftime('%Y/%m/%d')}</Date>"
     f.puts '  <Prefix></Prefix>'
     f.puts '  <Copyright></Copyright>'
-    f.puts '</minilogue_Preset>'
+    f.puts '</xd_Preset>'
   end
 end
 
@@ -337,7 +337,7 @@ def write_file_information(zip_file, n)
     f.puts '<?xml version="1.0" encoding="UTF-8"?>'
     f.puts
     f.puts '<KorgMSLibrarian_Data>'
-    f.puts '  <Product>minilogue</Product>'
+    f.puts '  <Product>minilogue xd</Product>'
     f.puts "  <Contents NumFavoriteData=\"0\" NumProgramData=\"#{n}\" NumPresetInformation=\"1\">"
     f.puts '    <PresetInformation>'
     f.puts '      <File>PresetInformation.xml</File>'
@@ -431,7 +431,7 @@ end
 if ARGV.length < 2
   STDERR.puts "miniloguesll display_name output_file input_file(s)"
   STDERR.puts
-  STDERR.puts "Example: miniloguesll \"My strings collection\" strings.mnlglib saw1.mnlgprog"
+  STDERR.puts "Example: miniloguesll \"My strings collection\" strings.mnlgxdlib saw1.mnlgxdprog"
   exit 1
 end
 
@@ -452,7 +452,7 @@ Zip::File.open(zip_filename, Zip::File::CREATE) do |f|
 
       f.add(bin_name, input_filename)
       write_empty_prog_info(f, info_name)
-    when /\.mnlgprog$/, /\.mnlglib$/
+    when /\.mnlgxdprog$/, /\.mnlgxdlib$/
       extract_presets(f, input_filename, catalogue)
     else
       STDERR.puts "Don't know what to do with #{input_filename}"
