@@ -1,4 +1,18 @@
-# The Minilogue Sound Librarian Librarian
+# The Minilogue (xd) Sound Librarian Librarian
+
+This is a modified version of the script created by @mlj.
+
+The original script was designed to create Preset Minilogue files. This version has been modified to support Minilogue xd Preset files.
+
+Below this line, is the original instructions of usage. They still apply, just use the minilogue xd files format:
+
+- mnlgxdlib
+- mnlgxdpreset
+- mnlgxdoprog
+
+---
+
+# Original README.md
 
 The Minilogue Sound Librarian Librarian (`miniloguesll`) is a simple script that prepares sound packs (a.k.a. preset files, a.k.a. `.mnlgpreset` files) from Minilogue patch files and bundles of patch files. For some strange reason this feature was left out of KORG's [Minilogue Sound Librarian](http://www.korg.com/uk/products/synthesizers/minilogue/librarian_contents.php) making it cumbersome to manage collections of Minilogue patches.
 
