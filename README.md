@@ -10,6 +10,8 @@ Below this line, is the original instructions of usage. They still apply, just u
 - mnlgxdpreset
 - mnlgxdprog
 
+NOTE: the original script contains hashes from the Korg pressets to filter them out. That doesn't work with this version! So using a mnlgxdlib file that contains factory patches will include them in the mnlgxdpreset file.
+
 ---
 
 **Original README.md**
